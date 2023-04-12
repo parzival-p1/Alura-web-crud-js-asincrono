@@ -1,4 +1,3 @@
-
 const crearNuevaLinea = (nombre, email) => 
 {
     const linea = document.createElement("tr")
