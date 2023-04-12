@@ -43,12 +43,8 @@ const table = document.querySelector("[data-table]")
  * */
 
 //* Fetch API
+const listaClientes = () => fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json()); // da formato json a respuesta
 
-const listaClientes = () => {
-    return fetch("http://localhost:3000/perfil").then( respuesta => {
-        return respuesta.json() // da formato json a respuesta
-    });
-};
 
 //^ response >>> data
 listaClientes().then((data) => {
