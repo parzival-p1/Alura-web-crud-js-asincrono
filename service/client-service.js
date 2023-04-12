@@ -28,7 +28,7 @@ const crearNuevaLinea = (nombre, email) =>
     `;
     linea.innerHTML = contenido;
     return linea
-};   
+};
 
 const table = document.querySelector("[data-table]")
 
@@ -42,23 +42,12 @@ const table = document.querySelector("[data-table]")
  * ! @http: Hyper Text Transform Protocol
  * */
 
-const listaClientes = () => 
-{
-    const promise = new Promise( (resolve, reject) => {
-        const http = new XMLHttpRequest();
-        http.open("GET", "http://localhost:3000/perfil");
+//* Fetch API
 
-        http.send();
-
-        http.onload = () => { // una vez cargado se ejecuta la func
-            const response = JSON.parse(http.response); //transforma el Text de http en Script
-            if (http.status >= 400) //! ERROR
-                reject(response);
-            else
-                resolve(response);
-        };
-    } );
-    return promise;
+const listaClientes = () => {
+    return fetch("http://localhost:3000/perfil").then( respuesta => {
+        return respuesta.json() // da formato json a respuesta
+    });
 };
 
 //^ response >>> data
