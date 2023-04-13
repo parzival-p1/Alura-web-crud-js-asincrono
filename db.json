@@ -9,6 +9,21 @@
       "nombre": "Paco Hdez",
       "email": "paco.hdez93@gmail.com",
       "id": 2
+    },
+    {
+      "nombre": "Isabel Trejo",
+      "email": "compuprintt@gmail.com",
+      "id": "00874f92-2697-42b5-8efd-525e41ae76b7"
+    },
+    {
+      "nombre": "Ma. Isabel Trejo",
+      "email": "compuprinttadmon@gmail.com",
+      "id": "98120109-c466-4695-9424-582e95f1610c"
+    },
+    {
+      "nombre": "David Trejo",
+      "email": "mail@mail.com",
+      "id": "aeedae8c-57df-4050-8756-99f802c64a43"
     }
   ]
 }
