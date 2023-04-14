@@ -27,8 +27,16 @@ const  eliminarCte = (id) => {
     });
 };
 
+//^ Update Cte
+const detalleCte = (id) => {
+    return fetch(`http://localhost:3000/perfil/${id}`).then(( respuesta ) => 
+        respuesta.json()
+    );
+}
+
 export const clientServices = {
     listaClientes, //key entrance
     crearCte,
     eliminarCte,
+    detalleCte,
 }; 
