@@ -1,6 +1,11 @@
 import { clientServices } from "../service/client-service.js";
 
-const obtenerInfo = () => {
+const formulario = document.querySelector("[data-form]");
+
+
+
+const obtenerInfo = () => 
+{
     const url = new URL(window.location);  //get the URL
     const id = url.searchParams.get("id");//URL as param
 
@@ -9,11 +14,6 @@ const obtenerInfo = () => {
         console.log("Redireccion");
     }
 
-    const nombre = document.querySelector("[data-nombre]");
-    const email  = document.querySelector("[data-email]");
-
-    console.log(nombre, "...", email);
-
     clientServices.detalleCte(id).then((perfil) => {
         nombre.value = perfil.nombre;
         email.value  = perfil.email;
@@ -21,3 +21,16 @@ const obtenerInfo = () => {
 };
 
 obtenerInfo();
+
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    const url = new URL(window.location);  //get the URL
+    const id = url.searchParams.get("id");//URL as param
+
+    const nombre = document.querySelector("[data-nombre]").value;
+    const email  = document.querySelector("[data-email]").value;
+    console.log(nombre, "...", email);
+    clientServices.actualizarCte(nombre, email, id).then(() => {
+        window.location.href = "../screens/edicion_concluida.html";
+    });
+});
