@@ -11,5 +11,5 @@ formulario.addEventListener("submit", (event) => {
         .crearCte(nombre, email)
         .then(() => { // Muesttra la pantalla "Completado"
             window.location.href = "../screens/registro_completado.html"
-        } ).catch(error => console.log(error));   
+        } ).catch(error => console.log(error));
 });
